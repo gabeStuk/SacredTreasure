@@ -51,7 +51,7 @@ Pretty good -- needs more testing
 ### Flukemarm
 Doesn't spawn flukes (too much protection i think)
 ### Broken Vessel
-[see similar](#L22)
+[see similar](#massive-mega-moss-charger)
 ### Galien
 Works pretty well, haven't localized teleport vectors
 ### Sheo
