@@ -2,12 +2,19 @@
 
 A mod for the game Hollow Knight. Allows for the player to spawn in bosses anywhere in Hallownest. 
 
+Bosses are listed in the mod settings and the progress section of this readme in [Pantheon 5 boss order](https://hollowknight.wiki/w/Pantheon_of_Hallownest)
+
 ## Gallery
-![20E95E~1](https://github.com/user-attachments/assets/e9a0f8ee-7363-46f2-8f09-f9b48f32ca58)
-![20E527~1](https://github.com/user-attachments/assets/3c61b4b8-2df9-450b-b4c3-926172d97e87)
-![2058CA~1](https://github.com/user-attachments/assets/f0b5f154-285c-4d43-8425-d050829b46b8)
-![204F05~1](https://github.com/user-attachments/assets/9b4fce2e-d403-4fb9-afef-5e7dc5c29b75)
-![209040~1](https://github.com/user-attachments/assets/6c1c6104-35cf-4b2e-973c-97aaa8cef330)
+<div style="display: flex; overflow-x: auto;">
+  <img src="https://github.com/user-attachments/assets/e9a0f8ee-7363-46f2-8f09-f9b48f32ca58" width="400" hspace="10" />
+  <img src="https://github.com/user-attachments/assets/3c61b4b8-2df9-450b-b4c3-926172d97e87" width="400" hspace="10" />
+  <img src="https://github.com/user-attachments/assets/f0b5f154-285c-4d43-8425-d050829b46b8" width="400" hspace="10" />
+  <img src="https://github.com/user-attachments/assets/9b4fce2e-d403-4fb9-afef-5e7dc5c29b75" width="400" hspace="10" />
+  <img src="https://github.com/user-attachments/assets/6c1c6104-35cf-4b2e-973c-97aaa8cef330" width="400" hspace="10" />
+</div>
+
+## Dev notes
+[notes.md](./notes.md)
 
 ## Status
 ### ⚠️WIP -- Release TBD⚠️
