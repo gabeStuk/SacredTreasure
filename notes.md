@@ -11,7 +11,7 @@ configured properly. It took me a long time to figure out why hornet's air dashi
 to dash at the knight. Only after many hours of debugging, testing, and searching with the FSMViewer did I realize that there was a variable in Hornet's
 'Control' FSM for 'Floor Y'. The problem was that Hornet thought she was far below the floor every time she did her airdash, and so she would upwarp to
 land "on the ground" before falling back down because there was no real floor, immediately ending the dash. Assigning to
-`object.LocateMyFSM("Control").FsmVariables.GetFsmFloat('Floor Y').Value`, I was then able to localize the floor y relative to the player instead of
+[`object.LocateMyFSM("Control").FsmVariables.GetFsmFloat('Floor Y').Value`](./Summoning.cs#L85), I was then able to localize the floor y relative to the player instead of
 the GG_Hornet_1 scene I got hornet from, which fixed the issue. Reading though a boss or other similarly sequenced object's state machine advancement
 and associated state machine variables gives you a great handle on how the boss functions, while also allowing you to find out what kinds of things you
 need to change to make it work.
