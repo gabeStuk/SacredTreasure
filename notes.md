@@ -37,3 +37,14 @@ find out what boss prefabs were called and what other objects I might need to su
 all of P5 and loaded every room, such that every boss except for Mantis Lords, Nosk, THK, and *The* Radiance had a scene dump where I could look at all
 the objects and find the ones I needed. Logging an object can also help you find child components that are causing trouble, such as the ConstrainPosition
 component on Hornet that keeps her in a hardcoded box ([./Summoning.cs#L78](./Summoning.cs#L78))
+
+## Procedural Binding
+
+A quick note on [the instantiation of `summoners`](./ModClass.cs#L164-L169) bit of code and its use of reflection because it's really weird. This is a
+procedural way to assign the necessary spawning methods to the chosen boss in the menu, represented by the `bossAbbrevs` array in Lists.cs. This is used
+in the HeroUpdate ModHook to call the method based on the index of the summoners dictionary [here](./ModClass.cs#L184-L193). In the `summoners` dictionary
+instantiation, the code loops through `bossAbbrevs`, and for each value `v` it checks for the existance of "Summoning.summon" + `v` as a method. If that
+method exists and is public and static, the code then creates a delegate (the same thing as std::bind in c++) and assigns it to the value of the dict
+entry corresponding to the key `v`. This way, instead of making another giant 50-line dictionary in Lists.cs to associate the summoning methods with the
+boss words used by the menu, they can be procedurally bound and the work is less tedious, and you also don't have to do some giant switch statement in
+the HeroUpdate hook.

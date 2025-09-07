@@ -57,7 +57,7 @@ namespace SacredTreasure
             a.transform.position = HeroController.instance.transform.position + new Vector3(5f, 50f);
             AfterSummon?.Invoke(a);
         }
-        // MMC -- good
+        // MMC -- need to investigate, no longer work
         public static void summonMMC(Dictionary<String, Dictionary<String, GameObject>> preloadedObjects, (float, float) scale)
         {
             var a = UObject.Instantiate(preloadedObjects["GG_Mega_Moss_Charger"]["Mega Moss Charger"]);
@@ -515,6 +515,7 @@ namespace SacredTreasure
         // GPZ
         // FC
         // NKG
+        // HK
         // PV
         // RAD
         // AR
