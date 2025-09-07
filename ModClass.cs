@@ -61,6 +61,7 @@ namespace SacredTreasure
                         maxValue: 5,
                         wholeNumbers: false
                     );
+
         public static STGlobalSettings GS { get; set; } = new STGlobalSettings();
 
         public bool ToggleButtonInsideMenu => false;
@@ -145,13 +146,16 @@ namespace SacredTreasure
                 ]
             );
 
-            MenuRef ??= new Menu(
-                name: "Sacred Treasure",
-                elements: []
-            );
+            if (MenuRef == null)
+            {
+                MenuRef = new Menu(
+                    name: "Sacred Treasure",
+                    elements: []
+                );
 
-            MenuRef.AddElement(new MenuButton("Primary", "Primary Summon", _ => Utils.GoToMenuScreen(PrimaryRef.returnScreen == MenuRef.menuScreen ? PrimaryRef.menuScreen : PrimaryRef.GetMenuScreen(MenuRef.menuScreen)), true));
-            MenuRef.AddElement(new MenuButton("Secondary", "Secondary Summon", _ => Utils.GoToMenuScreen(SecondaryRef.returnScreen == MenuRef.menuScreen ? SecondaryRef.menuScreen : SecondaryRef.GetMenuScreen(MenuRef.menuScreen)), true));
+                MenuRef.AddElement(new MenuButton("Primary", "Primary Summon", _ => Utils.GoToMenuScreen(PrimaryRef.returnScreen == MenuRef.menuScreen ? PrimaryRef.menuScreen : PrimaryRef.GetMenuScreen(MenuRef.menuScreen)), true));
+                MenuRef.AddElement(new MenuButton("Secondary", "Secondary Summon", _ => Utils.GoToMenuScreen(SecondaryRef.returnScreen == MenuRef.menuScreen ? SecondaryRef.menuScreen : SecondaryRef.GetMenuScreen(MenuRef.menuScreen)), true));
+            }
             return MenuRef.GetMenuScreen(modListMenu);
         }
 
